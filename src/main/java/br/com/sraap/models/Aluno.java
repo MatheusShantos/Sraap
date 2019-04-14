@@ -2,28 +2,25 @@ package br.com.sraap.models;
 
 import javax.persistence.Entity;
 
-import com.fasterxml.jackson.annotation.JsonTypeName;
-
 @Entity
-@JsonTypeName("aluno")
 public class Aluno extends Usuario {
 	private static final long serialVersionUID = 1L;
 
-	private String perfil;
+	private Perfil perfil;
 
 	public Aluno() {
 	}
 
-	public Aluno(Integer id, String nome, String email, String senha) {
-		super(id, nome, email, senha);
-
+	public Aluno(Integer id, String nomeCompleto, String email, String senha) {
+		super(id, nomeCompleto, email, senha);
+		// TODO Auto-generated constructor stub
 	}
 
-	public String getPerfil() {
+	public Perfil getPerfil() {
 		return perfil;
 	}
 
-	public void setPerfil(String perfil) {
+	public void setPerfil(Perfil perfil) {
 		this.perfil = perfil;
 	}
 

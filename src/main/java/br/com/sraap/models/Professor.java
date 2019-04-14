@@ -2,10 +2,7 @@ package br.com.sraap.models;
 
 import javax.persistence.Entity;
 
-import com.fasterxml.jackson.annotation.JsonTypeName;
-
 @Entity
-@JsonTypeName("professor")
 public final class Professor extends Usuario {
 	private static final long serialVersionUID = 1L;
 
@@ -14,9 +11,8 @@ public final class Professor extends Usuario {
 
 	}
 
-	public Professor(Integer id, String nome, String email, String senha) {
-		super(id, nome, email, senha);
-
+	public Professor(Integer id, String nomeCompleto, String email, String senha) {
+		super(id, nomeCompleto, email, senha);
+		// TODO Auto-generated constructor stub
 	}
-
 }

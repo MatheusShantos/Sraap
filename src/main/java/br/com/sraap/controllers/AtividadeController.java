@@ -16,13 +16,13 @@ public class AtividadeController {
 	private AtividadeRepository repository;
 
 	// Metodo que traz o formulario de atividades
-	@RequestMapping(value = "/novaAtividade", method = RequestMethod.GET)
+	@RequestMapping(value = "/nova-atividade", method = RequestMethod.GET)
 	public String form() {
 		return "works/formAtividade";
 	}
 
 	// Metodo que submete os dados para o banco de dados
-	@RequestMapping(value = "/novaAtividade", method = RequestMethod.POST)
+	@RequestMapping(value = "/nova-atividade", method = RequestMethod.POST)
 	public String save(Atividade atividade) {
 		repository.save(atividade);
 		return "works/formAtividade";
