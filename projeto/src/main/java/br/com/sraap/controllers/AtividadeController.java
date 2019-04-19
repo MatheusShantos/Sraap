@@ -16,21 +16,21 @@ public class AtividadeController {
 	private AtividadeRepository repository;
 
 	// Metodo que traz o formulario de atividades
-	@RequestMapping(value = "/nova-atividade", method = RequestMethod.GET)
+	@RequestMapping(value = "privado/nova-atividade", method = RequestMethod.GET)
 	public String form() {
-		return "works/formAtividade";
+		return "privado/professor/atividades/formAtividade";
 	}
 
 	// Metodo que submete os dados para o banco de dados
-	@RequestMapping(value = "/nova-atividade", method = RequestMethod.POST)
+	@RequestMapping(value = "privado/nova-atividade", method = RequestMethod.POST)
 	public String save(Atividade atividade) {
 		repository.save(atividade);
-		return "works/formAtividade";
+		return "privado/professor/atividades/formAtividade";
 	}
 
-	@RequestMapping("/atividades")
+	@RequestMapping("privado/atividades")
 	public ModelAndView findAll() {
-		ModelAndView modelView = new ModelAndView("/works/listaAtividades");
+		ModelAndView modelView = new ModelAndView("privado/professor/atividades/listaAtividades");
 		Iterable<Atividade> atividades = repository.findAll();
 		modelView.addObject("atividades", atividades);
 		return modelView;

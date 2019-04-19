@@ -1,13 +1,19 @@
 package br.com.sraap.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class Turma implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -17,6 +23,15 @@ public class Turma implements Serializable {
 	private int ano;
 	private String sigla;
 	private String disciplina;
+	
+	@OneToMany
+	private List<Aluno> alunos;
+	
+	@ManyToOne
+	private Professor professor;
+	
+	@ManyToMany
+	private List<Atividade> atividades;
 
 	public Turma() {
 	}
@@ -61,5 +76,12 @@ public class Turma implements Serializable {
 		this.disciplina = disciplina;
 	}
 
+	public List<Aluno> getAlunos() {
+		return alunos;
+	}
+
+	public void setAlunos(List<Aluno> alunos) {
+		this.alunos = alunos;
+	}
 
 }

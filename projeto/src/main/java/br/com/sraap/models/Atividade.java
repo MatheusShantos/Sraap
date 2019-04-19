@@ -1,13 +1,18 @@
 package br.com.sraap.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class Atividade implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -17,6 +22,12 @@ public class Atividade implements Serializable {
 	private String titulo;
 	private String descricao;
 	private String link;
+	
+	@ManyToOne
+	private Professor professor;
+	
+	@ManyToMany
+	private List<Turma> turmas;
 
 	public Integer getId() {
 		return id;

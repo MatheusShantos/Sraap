@@ -1,12 +1,23 @@
 package br.com.sraap.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class Aluno extends Usuario {
 	private static final long serialVersionUID = 1L;
 
-	private Perfil perfil;
+	private String perfil;
+
+	@OneToMany
+	private List<Turma> turmas;
+	
+//	@OneToMany
+//	private List<Atividade> recomendacoesAtividades;
 
 	public Aluno() {
 	}
@@ -16,12 +27,20 @@ public class Aluno extends Usuario {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Perfil getPerfil() {
+	public String getPerfil() {
 		return perfil;
 	}
 
-	public void setPerfil(Perfil perfil) {
+	public void setPerfil(String perfil) {
 		this.perfil = perfil;
+	}
+
+	public List<Turma> getTurmas() {
+		return turmas;
+	}
+
+	public void setTurmas(List<Turma> turmas) {
+		this.turmas = turmas;
 	}
 
 }

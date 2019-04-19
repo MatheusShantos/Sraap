@@ -1,8 +1,10 @@
 package br.com.sraap.models;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class Administrador extends Usuario {
 	private static final long serialVersionUID = 1L;
 

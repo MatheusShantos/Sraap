@@ -16,21 +16,21 @@ public class TurmaController {
 	private TurmaRepository repository;
 
 	// Metodo que traz o formulario de turmas
-	@RequestMapping(value = "/nova-turma", method = RequestMethod.GET)
+	@RequestMapping(value = "privado/nova-turma", method = RequestMethod.GET)
 	public String form() {
-		return "classes/formTurma";
+		return "privado/professor/turmas/formTurma";
 	}
 
 	// Metodo que submete os dados para o banco de dados
-	@RequestMapping(value = "/nova-turma", method = RequestMethod.POST)
+	@RequestMapping(value = "privado/nova-turma", method = RequestMethod.POST)
 	public String save(Turma turma) {
 		repository.save(turma);
-		return "classes/formTurma";
+		return "privado/professor/turmas/formTurma";
 	}
 
-	@RequestMapping("/turmas")
+	@RequestMapping("privado/turmas")
 	public ModelAndView findAll() {
-		ModelAndView modelView = new ModelAndView("/classes/listaTurmas");
+		ModelAndView modelView = new ModelAndView("privado/professor/turmas/listaTurmas");
 		Iterable<Turma> turmas = repository.findAll();
 		modelView.addObject("turmas", turmas);
 		return modelView;
