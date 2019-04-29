@@ -52,7 +52,7 @@ public class ConfiguracaoSegurancaWeb extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/resources/**");
+		web.ignoring().antMatchers("/static/**");
 	}
 	
 	@Autowired
