@@ -16,7 +16,7 @@ import javax.persistence.InheritanceType;
 public class Usuario implements Serializable {
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nomeCompleto=" + nomeCompleto + ", email=" + email + "]";
+		return "Usuario [id=" + id + ", nomeCompleto=" + nomeCompleto + ", email=" + email + ", senha=" + senha + "]";
 	}
 
 	private static final long serialVersionUID = 1L;
@@ -64,7 +64,7 @@ public class Usuario implements Serializable {
 	}
 
 	public String getSenha() {
-		return senha;
+		return  senha;
 	}
 
 	public void setSenha(String senha) {

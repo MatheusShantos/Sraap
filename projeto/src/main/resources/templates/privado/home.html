@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html class="no-js" lang="">
-<!--<![endif]-->
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+
 <head>
 <meta charset="utf-8">
 
@@ -42,17 +44,19 @@
 					<!-- /.menu-title -->
 					<li class="menu-item-has-children dropdown"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"
-						aria-haspopup="true" aria-expanded="false"><i class=" menu-icon fa fa-plus-circle"></i> Cadastrar
-					</a>
+						aria-haspopup="true" aria-expanded="false"><i
+							class=" menu-icon fa fa-plus-circle"></i> Cadastrar </a>
 						<ul class="sub-menu children dropdown-menu">
 							<li><i class="fa fa-user"></i><a href="/privado/novo-aluno">Novo
 									aluno</a></li>
 							<li><i class="fa fa-user"></i><a href="/privado/novo-adm">Novo
 									administrador</a></li>
-							<li><i class="fa fa-file"></i><a href="/privado/nova-atividade">Nova atividade</a></li>
-							<li><i class="fa fa-user"></i><a href="/privado/novo-professor">Novo
-									professor</a></li>
-							<li><i class="fa fa-home"></i><a href="/privado/nova-turma">Nova turma</a></li>
+							<li><i class="fa fa-file"></i><a
+								href="/privado/nova-atividade">Nova atividade</a></li>
+							<li><i class="fa fa-user"></i><a
+								href="/privado/novo-professor">Novo professor</a></li>
+							<li><i class="fa fa-graduation-cap"></i><a
+								href="/privado/nova-turma">Nova turma</a></li>
 						</ul></li>
 					<li class="menu-item-has-children active dropdown"><a
 						class="dropdown-toggle" data-toggle="dropdown"
@@ -61,10 +65,21 @@
 					</a>
 						<ul class="sub-menu children dropdown-menu">
 							<li><i class="fa fa-table"></i><a href="/privado/alunos">Alunos</a></li>
-							<li><i class="fa fa-table"></i><a href="/privado/administradores">Administradores</a></li>
+							<li><i class="fa fa-table"></i><a
+								href="/privado/administradores">Administradores</a></li>
 							<li><i class="fa fa-table"></i><a href="/privado/atividades">Atividades</a></li>
 							<li><i class="fa fa-table"></i><a href="/privado/turmas">Turmas</a></li>
-							<li><i class="fa fa-table"></i><a href="/privado/professores">Professores</a></li>
+							<li><i class="fa fa-table"></i><a
+								href="/privado/professores">Professores</a></li>
+						</ul></li>
+
+					<li class="menu-item-has-children dropdown"><a href="#"
+						class="dropdown-toggle" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false"><i
+							class=" menu-icon fa fa-cogs"></i> Configurações </a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><i class="ti-power-off"></i> <a href="/logout">Sair</a>
+							</li>
 						</ul></li>
 
 					<li class="menu-title">Análises</li>
@@ -75,10 +90,8 @@
 							class="menu-icon fa fa-bar-chart"></i>Avaliações
 					</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="menu-icon fa fa-line-chart"></i><a
-								href="">Professor</a></li>
-							<li><i class="menu-icon fa fa-area-chart"></i><a
-								href="">Atividades</a></li>
+							<li><i class="menu-icon fa fa-line-chart"></i><a href="">Professor</a></li>
+							<li><i class="menu-icon fa fa-area-chart"></i><a href="">Atividades</a></li>
 						</ul></li>
 				</ul>
 			</div>
@@ -121,7 +134,133 @@
 			</div>
 		</div>
 
-		sgdgs
+		<div class="content">
+			<!-- Animated -->
+			<div class="animated fadeIn">
+				<!-- Widgets  -->
+				<div class="row">
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<div class="card-body">
+								<a href="/privado/atividades">
+									<div class="stat-widget-five">
+										<div class="stat-icon dib flat-color-1">
+											<i class="pe-7s-copy-file"></i>
+										</div>
+										<div class="stat-content">
+											<div class="text-left dib">
+												<div class="stat-text">
+													<span class="count">23569</span>
+												</div>
+												<div class="stat-heading">Atividades</div>
+											</div>
+
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<div class="card-body">
+								<div class="stat-widget-five">
+									<div class="stat-icon dib flat-color-2">
+										<i class="pe-7s-study"></i>
+									</div>
+									<div class="stat-content">
+										<div class="text-left dib">
+											<div class="stat-text">
+												<span class="count">3435</span>
+											</div>
+											<div class="stat-heading">Turmas</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<div class="card-body">
+								<div class="stat-widget-five">
+									<div class="stat-icon dib flat-color-3">
+										<i class="pe-7s-user"></i>
+									</div>
+									<div class="stat-content">
+										<div class="text-left dib">
+											<div class="stat-text">
+												<span class="count">3435</span>
+											</div>
+											<div class="stat-heading">Alunos</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<div class="card-body">
+								<div class="stat-widget-five">
+									<div class="stat-icon dib flat-color-4">
+										<i class="pe-7s-user"></i>
+									</div>
+									<div class="stat-content">
+										<div class="text-left dib">
+											<div class="stat-text">
+												<span class="count">3435</span>
+											</div>
+											<div class="stat-heading">Administradores</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<div class="card-body">
+								<div class="stat-widget-five">
+									<div class="stat-icon dib flat-color-5">
+										<i class="pe-7s-user"></i>
+									</div>
+									<div class="stat-content">
+										<div class="text-left dib">
+											<div class="stat-text">
+												<span class="count">3435</span>
+											</div>
+											<div class="stat-heading">Professores</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<div class="card-body">
+								<div class="stat-widget-five">
+									<div class="stat-icon dib flat-color-6">
+										<i class="pe-7s-graph3"></i>
+									</div>
+									<div class="stat-content">
+										<div class="text-left dib">
+											<div class="stat-text">
+												<span class="count">2986</span>
+											</div>
+											<div class="stat-heading">Avaliações</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Widgets -->
+			</div>
+			<!-- .animated -->
+		</div>
 
 		<div class="clearfix"></div>
 
